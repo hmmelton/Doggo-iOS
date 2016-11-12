@@ -15,6 +15,7 @@
 		57E960C41DD7905D006999D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E960C31DD7905D006999D0 /* Assets.xcassets */; };
 		57E960C71DD7905D006999D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E960C51DD7905D006999D0 /* LaunchScreen.storyboard */; };
 		57E960D51DD7A329006999D0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E960D41DD7A329006999D0 /* Config.swift */; };
+		57E960D81DD7C9BB006999D0 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E960D71DD7C9BA006999D0 /* Pet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		57E960C61DD7905D006999D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57E960C81DD7905D006999D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57E960D41DD7A329006999D0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		57E960D71DD7C9BA006999D0 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		6377E1D171E4B59CC3D2365A /* Pods_Doggo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doggo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B638CC62477E1AA5BD0B1288 /* Pods-Doggo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doggo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doggo/Pods-Doggo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +67,7 @@
 		57E960B91DD7905D006999D0 /* Doggo */ = {
 			isa = PBXGroup;
 			children = (
+				57E960D61DD7C9B2006999D0 /* Models */,
 				57E960D31DD7A30D006999D0 /* Utils */,
 				57E960BC1DD7905D006999D0 /* FirstViewController.swift */,
 				57E960BE1DD7905D006999D0 /* SecondViewController.swift */,
@@ -91,6 +94,14 @@
 				57E960D41DD7A329006999D0 /* Config.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		57E960D61DD7C9B2006999D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57E960D71DD7C9BA006999D0 /* Pet.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		B89538C6D0B6BF695E30BB62 /* Pods */ = {
@@ -234,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E960D81DD7C9BB006999D0 /* Pet.swift in Sources */,
 				57E960BF1DD7905D006999D0 /* SecondViewController.swift in Sources */,
 				57E960D51DD7A329006999D0 /* Config.swift in Sources */,
 				57E960BB1DD7905D006999D0 /* AppDelegate.swift in Sources */,
