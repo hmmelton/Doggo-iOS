@@ -8,12 +8,21 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let parameters: Parameters = ["key" : Config.API_KEY, "animal" : "dog", "format" : "json"]
+        
+        Alamofire.request((Config.BASE_ENDPOINT + "/breed.list"), method: HTTPMethod.get, parameters: parameters)
+            .validate()
+            .responseString { response in
+                switch 
+            }
+    
     }
 
     override func didReceiveMemoryWarning() {
