@@ -38,9 +38,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                             let xmlDoc = try AEXMLDocument(xml: value)
                             print(xmlDoc.xml)
                             if let 🐶🐶 = xmlDoc.root["pets"]["pet"].all {
-                                // Print the name of each breed
+                                // Add each doge to 
                                 for 🐶 in 🐶🐶 {
-                                    print("\n \(🐶["name"].string) \n")
+                                    Pet(data: 🐶)
                                 }
                             } else {
                                 // XML path was null
