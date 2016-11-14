@@ -35,7 +35,9 @@ struct Pet {
         self.breeds = [String]()
         if let breeds = data["breeds"].all {
             for breed in breeds {
-                self.breeds.append(breed.value!)
+                if let value = breed.value {
+                    self.breeds.append(value)
+                }
             }
         }
         
@@ -48,7 +50,9 @@ struct Pet {
         self.options = [String]()
         if let options = data["options"].all {
             for option in options {
-                self.options.append(option.value!)
+                if let value = option.value {
+                    self.options.append(value)
+                }
             }
         }
         
@@ -57,9 +61,11 @@ struct Pet {
         
         // Parse for all photos of animal
         self.photos = [String]()
-        if let photos = data["media"]["photos"].all(withAttributes: ["size" : "fpm", "size" : "pn"]) {
+        if let photos = data["media"]["photos"].all {
             for photo in photos {
-                self.photos.append(photo.value!)
+                if let value = photo.value {
+                    self.photos.append(value)
+                }
             }
         }
         

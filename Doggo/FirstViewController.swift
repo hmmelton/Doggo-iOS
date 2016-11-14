@@ -11,9 +11,12 @@ import Alamofire
 import AEXML
 import CoreLocation
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
 
     var location = CLLocationManager()
+    var dataSource = [Pet]()
+    
+    // MARK: Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                             if let 🐶🐶 = xmlDoc.root["pets"]["pet"].all {
                                 // Add each doge to 
                                 for 🐶 in 🐶🐶 {
-                                    Pet(data: 🐶)
+                                    self.dataSource.append(Pet(data: 🐶))
                                 }
                             } else {
                                 // XML path was null
@@ -66,6 +69,45 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // This function downloads an image from a URL
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    // MARK: UITableView Functions
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: PetCell = (tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as! PetCell)
+        
+        cell.label.text = self.dataSource[indexPath.row].name
+        let imageUrl: URL = URL(string: self.dataSource[indexPath.row].photos[1])!
+        // Asynchronously get image
+        getDataFromUrl(url: imageUrl) { (data, response, error) in
+            DispatchQueue.main.async() { () -> Void in
+                if (data != nil && error == nil) {
+                    cell.coverPhoto.image = UIImage(data: data!)
+                }
+            }
+        }
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource.count
+    }
+    
+    
     // MARK: Location Functions
     private func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error) -> Void in
@@ -75,8 +117,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             }
             
             if placemarks!.count == 0 {
-                let pm = (placemarks![0]) as? CLPlacemark
-                self.displayLocationInfo(placemark: pm!)
+                let pm = (placemarks![0]) as CLPlacemark
+                self.displayLocationInfo(placemark: pm)
             } else {
                 print("Problem with the data received from geocoder")
             }

@@ -16,6 +16,7 @@
 		57E960C71DD7905D006999D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E960C51DD7905D006999D0 /* LaunchScreen.storyboard */; };
 		57E960D51DD7A329006999D0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E960D41DD7A329006999D0 /* Config.swift */; };
 		57E960D81DD7C9BB006999D0 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E960D71DD7C9BA006999D0 /* Pet.swift */; };
+		57FD5AC51DD7DC0800A60688 /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD5AC41DD7DC0800A60688 /* PetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		57E960C81DD7905D006999D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57E960D41DD7A329006999D0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		57E960D71DD7C9BA006999D0 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		57FD5AC41DD7DC0800A60688 /* PetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
 		6377E1D171E4B59CC3D2365A /* Pods_Doggo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doggo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B638CC62477E1AA5BD0B1288 /* Pods-Doggo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doggo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doggo/Pods-Doggo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 		57E960B91DD7905D006999D0 /* Doggo */ = {
 			isa = PBXGroup;
 			children = (
+				57FD5AC31DD7DBDE00A60688 /* Views */,
 				57E960D61DD7C9B2006999D0 /* Models */,
 				57E960D31DD7A30D006999D0 /* Utils */,
 				57E960BC1DD7905D006999D0 /* FirstViewController.swift */,
@@ -102,6 +105,14 @@
 				57E960D71DD7C9BA006999D0 /* Pet.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		57FD5AC31DD7DBDE00A60688 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57FD5AC41DD7DC0800A60688 /* PetCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B89538C6D0B6BF695E30BB62 /* Pods */ = {
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E960D81DD7C9BB006999D0 /* Pet.swift in Sources */,
+				57FD5AC51DD7DC0800A60688 /* PetCell.swift in Sources */,
 				57E960BF1DD7905D006999D0 /* SecondViewController.swift in Sources */,
 				57E960D51DD7A329006999D0 /* Config.swift in Sources */,
 				57E960BB1DD7905D006999D0 /* AppDelegate.swift in Sources */,
