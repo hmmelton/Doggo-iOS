@@ -39,7 +39,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
                         // Value was pulled from response
                         do {
                             let xmlDoc = try AEXMLDocument(xml: value)
-                            print(xmlDoc.xml)
                             if let 🐶🐶 = xmlDoc.root["pets"]["pet"].all {
                                 // Add each doge to 
                                 for 🐶 in 🐶🐶 {
@@ -49,6 +48,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
                                 // XML path was null
                                 print("\n\n\n error fetching doges \n\n\n\n")
                             }
+                            print("\n\n\n\n \(self.dataSource.count) \n\n\n\n")
                         } catch {
                             print("\n\n\n \(error) \n\n\n")
                         }
