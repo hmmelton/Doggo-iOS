@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11DEF6DC7650015FC0811432 /* Pods_Doggo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377E1D171E4B59CC3D2365A /* Pods_Doggo.framework */; };
+		57A34F991DE6A53000FCFB7C /* UIGalleryPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A34F981DE6A53000FCFB7C /* UIGalleryPager.swift */; };
 		57E960BB1DD7905D006999D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E960BA1DD7905D006999D0 /* AppDelegate.swift */; };
 		57E960BD1DD7905D006999D0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E960BC1DD7905D006999D0 /* FirstViewController.swift */; };
 		57E960BF1DD7905D006999D0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E960BE1DD7905D006999D0 /* SecondViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		05B0AE7F8EC00724190540C3 /* Pods-Doggo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doggo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doggo/Pods-Doggo.release.xcconfig"; sourceTree = "<group>"; };
+		57A34F981DE6A53000FCFB7C /* UIGalleryPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGalleryPager.swift; sourceTree = "<group>"; };
 		57E960B71DD7905D006999D0 /* Doggo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doggo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E960BA1DD7905D006999D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57E960BC1DD7905D006999D0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				57FD5AC41DD7DC0800A60688 /* PetCell.swift */,
+				57A34F981DE6A53000FCFB7C /* UIGalleryPager.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				57E960D51DD7A329006999D0 /* Config.swift in Sources */,
 				57E960BB1DD7905D006999D0 /* AppDelegate.swift in Sources */,
 				57E960BD1DD7905D006999D0 /* FirstViewController.swift in Sources */,
+				57A34F991DE6A53000FCFB7C /* UIGalleryPager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

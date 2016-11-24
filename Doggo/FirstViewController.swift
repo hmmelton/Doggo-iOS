@@ -11,13 +11,14 @@ import Alamofire
 import AEXML
 import CoreLocation
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
 
     var location = CLLocationManager()
     var dataSource = [Pet]()
     
-    // MARK: Functions
+    @IBOutlet weak var tableView: UITableView!
     
+    // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +26,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         location.desiredAccuracy = kCLLocationAccuracyBest
         location.requestWhenInUseAuthorization()
         location.startUpdatingLocation()
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         // Location is currently hardcoded, due to GPS problems with emulator
         let parameters: Parameters = ["key" : Config.API_KEY, "animal" : "dog", "location" : "98029", "count" : 20]
@@ -48,6 +52,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
                                 // XML path was null
                                 print("\n\n\n error fetching doges \n\n\n\n")
                             }
+                            self.tableView.reloadData()
                             print("\n\n\n\n \(self.dataSource.count) \n\n\n\n")
                         } catch {
                             print("\n\n\n \(error) \n\n\n")
@@ -83,15 +88,18 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PetCell = (tableView.dequeueReusableCell(withIdentifier: "PetCell", for: indexPath) as! PetCell)
+        let cell: PetCell = (tableView.dequeueReusableCell(withIdentifier: "PetTableViewCell", for: indexPath) as! PetCell)
         
-        cell.label.text = self.dataSource[indexPath.row].name
-        let imageUrl: URL = URL(string: self.dataSource[indexPath.row].photos[1])!
-        // Asynchronously get image
-        getDataFromUrl(url: imageUrl) { (data, response, error) in
-            DispatchQueue.main.async() { () -> Void in
-                if (data != nil && error == nil) {
-                    cell.coverPhoto.image = UIImage(data: data!)
+        cell.nameView.text = self.dataSource[indexPath.row].name
+
+        if self.dataSource[indexPath.row].photos.count > 2 {
+            let imageUrl: URL = URL(string: self.dataSource[indexPath.row].photos[2])!
+            // Asynchronously get image
+            getDataFromUrl(url: imageUrl) { (data, response, error) in
+                DispatchQueue.main.async() { () -> Void in
+                    if (data != nil && error == nil) {
+                        cell.coverImage.image = UIImage(data: data!)
+                    }
                 }
             }
         }
@@ -104,6 +112,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("count: \(self.dataSource.count)")
         return self.dataSource.count
     }
     
@@ -137,6 +146,5 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         print((placemark.administrativeArea != nil) ? placemark.administrativeArea! : "")
         print((placemark.country != nil) ? placemark.country! : "")
     }
-
 }
 
