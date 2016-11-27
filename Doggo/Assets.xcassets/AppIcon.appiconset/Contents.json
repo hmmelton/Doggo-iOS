@@ -3,49 +3,49 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "doggo 40.png",
+      "filename" : "doggo40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "doggo 60.png",
+      "filename" : "doggo60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "doggo 58.png",
+      "filename" : "doggo58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "doggo 87.png",
+      "filename" : "doggo87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "doggo 80.png",
+      "filename" : "doggo80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "doggo 120-1.png",
+      "filename" : "doggo120-1.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "doggo 120.png",
+      "filename" : "doggo120.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "doggo 180.png",
+      "filename" : "doggo180.png",
       "scale" : "3x"
     }
   ],

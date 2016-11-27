@@ -20,7 +20,7 @@ class PetCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         // Add gradients for better visibility of items on top of images
-        self.addShadeGradient(view: self.infoView, fromBottom: true)
+        //self.addShadeGradient(view: self.infoView, fromBottom: true)
         self.addShadeGradient(view: self.buttonsView, fromBottom: false)
     }
 
